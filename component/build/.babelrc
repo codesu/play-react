@@ -1,0 +1,45 @@
+{
+    "presets": [
+        "stage-1",
+        "react"
+    ],
+    "env": {
+        "site:dev": {
+            "presets": ["env"],
+            "plugins" : ["react-hot-loader/babel", "transform-class-properties"]
+        },
+        "site:prod": {
+            "presets": [
+                "minify",
+                ["env", {
+                    "modules": false,
+                    "loose": true,
+                    "targets": {
+                        "browsers": ["last 2 versions", "safari >= 7"]
+                    }
+                }]
+            ],
+            "plugins" : ["transform-class-properties"]
+        },
+        "test": {
+            "presets": ["env"],
+            "plugins" : ["transform-class-properties"]
+        },
+        "es5": {
+            "presets": ["env"],
+            "plugins" : ["transform-class-properties", "transform-react-remove-prop-types"]
+        },
+        "es2015": {
+            "presets": [
+                ["env", {
+                    "modules": false,
+                    "loose": true,
+                    "targets": {
+                        "browsers": ["last 2 versions"]
+                    }
+                }]
+            ],
+            "plugins" : ["transform-class-properties"]
+        }
+    }
+}

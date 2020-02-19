@@ -1,0 +1,54 @@
+$dark-color: #202020;
+$blossom-color: #d02929;
+
+.underline-input {
+    .underline-input_list {
+        display: flex;
+        justify-content: space-around;
+        height: 30px;
+        padding-left: 0;
+        list-style: none;
+    }
+    .underline-input_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        border-bottom: 1px solid #ebeff4;
+        font-size: 22px;
+        color: $dark-color;
+    }
+    .underline-input_dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $dark-color;
+    }
+    &.underline-input-error {
+        .underline-input_list {
+            animation: positon-shake .2s 2 ease;
+        }
+        .underline-input_item {
+            border-color: blossom-color;
+        }
+    }
+}
+
+@keyframes positon-shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
