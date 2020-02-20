@@ -1,0 +1,72 @@
+@import '../../../style/mixin';
+@import '../../../style/var';
+@import './picker.scss';
+
+.picker {
+    @include full-screen();
+}
+.picker-backdrop {
+    @include backdrop();
+    &.picker-backdrop-enter {
+        opacity: 0;
+        &.picker-backdrop-enter-active {
+            opacity: .5;
+            transition-duration: 300ms;
+            transition-timing-function: ease;
+        }
+    }
+    &.picker-backdrop-leave {
+        opacity: .5;
+        &.picker-backdrop-leave-active {
+            opacity: 0;
+            transition-duration: 300ms;
+            transition-timing-function: ease;
+        }
+    }
+}
+
+.picker-main {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    &.picker-main-enter {
+        transform: translateY(100%);
+        &.picker-main-enter-active {
+            transform: translateY(0);
+            transition-duration: 300ms;
+            transition-timing-function: ease;
+        }
+    }
+    &.picker-main-leave {
+        transform: translateY(0);
+        &.picker-main-leave-active {
+            transform: translateY(100%);
+            transition-duration: 300ms;
+            transition-timing-function: ease;
+        }
+    }
+}
+
+.picker-header {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 15px;
+    font-size: 18px;
+    color: $color-dark;
+}
+
+.picker-header-btn {
+    font-size: 16px;
+    color: $color-primary;
+}
+
+.picker-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
